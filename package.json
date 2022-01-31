@@ -1,0 +1,22 @@
+{
+  "name": "one-less-step",
+  "version": "1.0.0",
+  "description": "generate readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaira222/One-less-step.git"
+  },
+  "author": "zaira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaira222/One-less-step/issues"
+  },
+  "homepage": "https://github.com/zaira222/One-less-step#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
