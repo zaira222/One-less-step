@@ -57,12 +57,7 @@ const promptquestions = () => {
         input: 'input',
         name: 'email',
         message: 'What is your email address?'
-}, 
-{
-        input: 'input',
-        name: 'instructions',
-        message: 'Any other Instructions on how others can reach you?'
-} 
+}
 ]);
 }
 

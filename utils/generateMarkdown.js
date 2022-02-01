@@ -36,7 +36,8 @@ return `
  ${generateTest(test)}
  ${generateQuestions(questions)}
 * ${email}
-* ${instructions}
+* I have added my email and Github link feel free to contact me. Either with 
+any questions or any ideas of improvements. Thank you.
 `;
   };
   function generateMarkdown(Markdata) {
@@ -103,12 +104,9 @@ const generateTest = testText => {
 };
 
 const generateQuestions = (questionsText)  => {
-    if(!questionsText) {
-        return '';
-    }
     return `
 ## Questions
 * <a class href="https://github.com/${questionsText}">Github Link</a>
-* ${questionsText}
-    `;
+
+`;
 };
