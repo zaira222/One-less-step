@@ -108,7 +108,7 @@ const generateQuestions = (questionsText)  => {
     }
     return `
 ## Questions
-* <a class href="https://github.com/${questionsText}"></a>
+* <a class href="https://github.com/${questionsText}">Github Link</a>
 * ${questionsText}
     `;
 };
