@@ -5,7 +5,7 @@ console.log(inquirer);
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const promptquestions = () => {
+const questions = () => {
     return inquirer.prompt ([
     {
         type: 'input',
@@ -57,61 +57,41 @@ const promptquestions = () => {
         input: 'input',
         name: 'email',
         message: 'What is your email address?'
+},
+{
+        type: 'list',
+        name: 'license',
+        message: 'Which license did you use from the following',
+        choices: ['MIT', 'Apache', 'BSD', 'None']
+
 }
-]);
+    ]) 
 }
-
-const promptSections = (MarkData) => {
-    console.log(`
-    ============
-    Markdown
-    ============
-    
-    `);
-    if(!MarkData.Markdowns) {
-        MarkData.Markdowns = [];
-    }
-    return inquirer.prompt([
-        {
-            type: 'confirmlicense',
-            name: 'badge',
-            message: 'Would you like to add a license?',
-            default: true
-        },
-
-        {
-            type: 'list',
-            name: 'license',
-            message: 'Which license did you use from the following',
-            choices: ['MIT', 'Apache', 'BSD', 'None']
-
-        }
-
-    ])
-    .then(MarkdownData => {
-        MarkData.Markdowns.push(MarkdownData);
-        if(MarkdownData.confirmAddMarkdown) {
-            return promptSections(MarkData);
-        } else {
-            return MarkData;
-        }
+const writeToFile = (fileName, data) => {
+    return new Promise ((resolve, reject) => {
+        fs.writeFile('./dist/readme.md', fileName, err => {
+            if (err) {
+                reject(err);
+                return;
+         }
+             resolve({
+                 ok: true,
+                 message: 'ReadMe File created!'
+             });
+        });
     });
 };
-    
-// TODO: Create a function to initialize app
-function init() {    
-promptquestions()
-    .then(promptSections)
-    .then(MarkData => {
-        const pagemd = generateMarkdown(MarkData)
 
-     fs.writeFile('./dist/readme.md', pagemd, err => {
-       if (err) 
-       {
-           throw err;
-        } console.log("Markdown is complete!");
-     });
+// TODO: Create a function to initialize app
+function init() {   
+    inquirer.prompt
+    questions()
+    .then(data => {
+        console.log(data);
+        const readme = generateMarkdown(data);
+        writeToFile(readme)
     })
 }
+
 // Function call to initialize app
 init();
