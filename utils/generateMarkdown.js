@@ -37,7 +37,6 @@ return `
  ${generateQuestions(questions)}
 * ${email}
 * ${instructions}
-${generateMarkdown(License)}        
 `;
   };
   function generateMarkdown(Markdata) {
