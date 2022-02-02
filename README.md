@@ -39,7 +39,11 @@ https://docs.github.com/en/get-started/writing-on-github/getting-started-with-wr
 ## Tests
 I have added video links to demonstrate how One Less Step should be used to 
 receive the generated readme file. The generated readme file for this video is in 
-the dist folder.
+the dist folder in readme.md file. I have also added a picture of the commmand line and how its supposed to look when its 
+done with all the questions.
+
+<img width="401" alt="image" src="https://user-images.githubusercontent.com/94399039/152203892-de26568f-0cba-4490-8418-acf0c8602c22.png">
+<img width="497" alt="image" src="https://user-images.githubusercontent.com/94399039/152204068-0dc6d369-e201-4df9-b2de-abfc3b34e4e9.png">
 
 https://drive.google.com/file/d/1OKf7COKiH1CjS_clRcgSwSaz1ypPdjzx/view
 
