@@ -1,19 +1,71 @@
-const fs = require('fs');
 
 module.exports = generateMarkdown;
+
+
+// TODO: Create a function that returns a license badge based on which license is passed in
+// If there is no license, return an empty string
+function renderLicenseBadge(license){
+  
+   if(license === 'MIT') {
+       return `
+       ![NPM](https://img.shields.io/npm/l/inquirer.svg)
+        `
+     } else if (license === 'Apache') {
+         return `
+         ![AUR license](https://img.shields.io/aur/license/android-studio.svg)
+         `
+   } else if(license === 'BSD') {
+       return `
+       ![PyPI - License](https://img.shields.io/pypi/l/OpenBSD?logo=BSD.svg)
+    `
+   } else if(license === 'None') {
+       return `
+       " "
+       `
+    
+     }     
+     return license;
+   }  
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {
+    
+   if(license === 'MIT') {
+       return `     
+* This project is licensed under MIT license and the link is below.
+* https://choosealicense.com/licenses/mit/
+       `
+      } else if (license === 'Apache') {
+          return `
+* This project is licensed under Apache license and the link is below.
+* https://www.apache.org/licenses/LICENSE-1.0
+          `
+    } else if(license === 'BSD') {
+        return `
+* This project is licensed under BSD license and the link is below.
+* https://www.openbsd.org/policy.html
+        `
+    } else if(license === 'None') {
+        return `     `
+      }       
+      return license;
+   
+    
+    }  
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
 return `
-# ${data.title}  ${data.license}
+# ${data.title}  ${renderLicenseBadge(data.license)}
 
 ## Table of Contents:
-* <a href="#description">Description</a>
-* <a href="#installation">Installation</a>
-* <a href="#usage">Usage</a>
-* <a href="#contributing">Contributing</a>
-* <a href="#test">Tests</a>
-* <a href="#questions">Questions</a>
-* <a href="#license">License</a>
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+* [License](#license)
  
 
 ## Description 
@@ -30,58 +82,20 @@ return `
 * ${data.contributing}
 
 
-## Test
+## Tests
 * ${data.test}
 
 ## Questions
-* I have added my email and Github link feel free to contact me. Either with 
+* I have added my email and Github link feel free to contact me for
 any questions or any ideas of improvements.
 * ${data.email}
 * <a class href="https://github.com/${data.questions}">Github Link</a>
-
+* ${data.questions}
 
 ## License
-* License Badge:
-* License used:
-${data.license}
-
-
+${(renderLicenseLink(data.license))}
 `;
 }
-
-
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license){
-     var badge = ""
-    if(license === 'MIT') {
-       badge = !("https://img.shields.io/badge/license-MIT-green/node.svg")
-      } else if (license === 'Apache') {
-       badge = !("https://img.shields.io/badge/license-Apache-blue/node.svg")
-    } else if(license === 'BSD') {
-       badge = !("https://img.shields.io/badge/license-BSD-green/node.svg")
-    } else if(license === 'None') {
-         badge = ('')
-      }     
-      return badge;
-    }  
-   
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-    var link = ''
-    if(license === 'MIT') {
-        link = !("https://choosealicense.com/licenses/mit/")
-       } else if (license === 'Apache') {
-        link = !("https://www.apache.org/licenses/LICENSE-1.0")
-     } else if(license === 'BSD') {
-        link = !("https://www.openbsd.org/policy.html")
-     } else if(license === 'None') {
-        link = ('')
-       }     
-       return link;
-     }  
-
 
 
 

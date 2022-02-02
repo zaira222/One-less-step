@@ -1,7 +1,6 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-console.log(inquirer);
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
@@ -62,7 +61,7 @@ const questions = () => {
         type: 'list',
         name: 'license',
         message: 'Which license did you use from the following',
-        choices: ['MIT', 'Apache', 'BSD', 'None']
+        choices: ['MIT', 'Apache', 'BSD', 'No License']
 
 }
     ]) 
@@ -76,7 +75,7 @@ const writeToFile = (fileName, data) => {
          }
              resolve({
                  ok: true,
-                 message: 'ReadMe File created!'
+                 message: ('ReadMe File created!')
              });
         });
     });
