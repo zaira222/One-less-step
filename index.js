@@ -75,7 +75,7 @@ const writeToFile = (fileName, data) => {
          }
              resolve({
                  ok: true,
-                 message: ('ReadMe File created!')
+                 message: console.log('ReadMe File created!')
              });
         });
     });
@@ -86,7 +86,6 @@ function init() {
     inquirer.prompt
     questions()
     .then(data => {
-        console.log(data);
         const readme = generateMarkdown(data);
         writeToFile(readme)
     })
