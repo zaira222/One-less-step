@@ -37,7 +37,13 @@ https://docs.github.com/en/get-started/writing-on-github/getting-started-with-wr
 * https://choosealicense.com/licenses/mit/
 
 ## Tests
+I have added video links to demonstrate how One Less Step should be used to 
+receive the generated readme file. The generated readme file for this video is in 
+the dist folder.
 
+https://drive.google.com/file/d/1OKf7COKiH1CjS_clRcgSwSaz1ypPdjzx/view
+
+https://drive.google.com/file/d/1OKf7COKiH1CjS_clRcgSwSaz1ypPdjzx/view?usp=sharing
 
 ## Questions
 If you have any questions you can reach me in my Github account zaira222 and the link will be below.
