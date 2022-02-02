@@ -1,6 +1,6 @@
 
-# One less step 
-         ![AUR license](https://img.shields.io/aur/license/android-studio.svg)
+# One less step
+         ![AUR license](https://img.shields.io/aur/license/android-studio?label=License)
          
 
 ## Table of Contents:

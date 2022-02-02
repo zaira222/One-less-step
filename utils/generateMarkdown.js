@@ -8,15 +8,15 @@ function renderLicenseBadge(license){
   
    if(license === 'MIT') {
        return `
-       ![NPM](https://img.shields.io/npm/l/inquirer.svg)
+       ![NPM](https://img.shields.io/npm/l/express?label=License)
         `
      } else if (license === 'Apache') {
          return `
-         ![AUR license](https://img.shields.io/aur/license/android-studio.svg)
+         ![AUR license](https://img.shields.io/aur/license/android-studio?label=License)
          `
    } else if(license === 'BSD') {
        return `
-       ![PyPI - License](https://img.shields.io/pypi/l/OpenBSD?logo=BSD.svg)
+       ![PyPI - License](https://img.shields.io/pypi/l/OPENBSD?label=License)
     `
    } else if(license === 'None') {
        return `
